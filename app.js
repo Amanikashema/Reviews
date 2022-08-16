@@ -39,4 +39,69 @@ const reviews = [
 ];
 
 
-const author = document.querySelector('#author')
+const img = document.getElementById('person-img')
+const author = document.getElementById("author")
+const info = document.getElementById("info")
+const job = document.getElementById("job")
+const prevBtn = document.querySelector(".prev-btn")
+const nextBtn = document.querySelector(".next-btn")
+const randomBtn = document.querySelector('.random-btn')
+
+// set stating item
+let currentItem = 0
+
+
+// console.log(reviews[0])
+// reviews.forEach(element => {
+//   console.log(element)
+// });
+
+
+// load initial item
+window.addEventListener('DOMContentLoaded',function(){
+showPerson(currentItem)
+})
+
+
+// Show Person Based on Item
+
+function showPerson(person){
+  const item = reviews[person]
+  img.src = item.img
+  author.textContent = item.name
+  job.textContent = item.job
+  info.textContent = item.text
+}
+
+
+// show next person
+nextBtn.addEventListener('click', function() {
+  currentItem++
+  if (currentItem > reviews.length - 1 ){
+    currentItem = 0
+  }
+  showPerson(currentItem)
+})
+
+// show previus person
+prevBtn.addEventListener('click', function() {
+  currentItem--
+  if (currentItem < 0){
+    currentItem = reviews.length - 1;
+  }
+    showPerson(currentItem)
+})
+
+
+
+// show random person
+randomBtn.addEventListener('click', function(){
+  showPerson(randomItem())
+  console.log("Missing button")
+
+})
+
+
+function randomItem(){
+ return Math.floor(Math.random()*reviews.length)
+}
