@@ -173,8 +173,8 @@ main {
   margin-right: auto;
 }
 .container {
-  width: 80vw;
-  max-width: 50%;
+  width: 100vw;
+  max-width: 100%;
 }
 .review {
   background: var(--clr-white);
