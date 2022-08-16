@@ -97,8 +97,6 @@ prevBtn.addEventListener('click', function() {
 // show random person
 randomBtn.addEventListener('click', function(){
   showPerson(randomItem())
-  console.log("Missing button")
-
 })
 
 
