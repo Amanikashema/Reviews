@@ -174,7 +174,7 @@ main {
 }
 .container {
   width: 80vw;
-  max-width: var(--fixed-width);
+  max-width: 50%;
 }
 .review {
   background: var(--clr-white);
